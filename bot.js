@@ -312,34 +312,6 @@ function play(guild, song) {
 }
 
 
-client.on('message', message => {
-    if (message.content === 'help') {
-        let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**أوامر الميوزك...**')
-        .setDescription('**برفكس البوت (!)**')
-        .addField('Gaplay', 'لتشغيل اغنية')
-        .addField('Gajoin', 'دخول رومك الصوتي')
-        .addField('Gadisconnect', 'الخروج من رومك الصوتي')
-        .addField('Gaskip', 'تخطي الأغنية')
-        .addField('Gapause', 'ايقاف الاغنية مؤقتا')
-        .addField('Garesume', 'تكملة الاغنية')
-        .addField('Gaqueue', 'اظهار قائمة التشغيل')
-        .addField('Ganp', 'اظهار الاغنية اللي انت مشغلها حاليا')
-        .setFooter('(general_commands) لاظهار الاوامر العامة')
-      message.channel.send(helpEmbed);
-    }
-});
 
-client.on('message', message => {
-    if (message.content === 'general_commands') {
-        let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**أوامر عامة...**')
-        .addField('Gaavatar', "افاتار الشخص المطلوب")
-        .addField('Gagif', 'البحث عن جيف انت تطلبه')
-        .addField('Gaping', 'معرفة ping البوت')
-        .setFooter('المزيد قريبا ان شاء الله!')
-      message.channel.send(helpEmbed);
-    }
-});
 
 client.login(process.env.BOT_TOKEN);
