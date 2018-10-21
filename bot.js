@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "g!";
+const prefix = "Ga";
 /////////////////////////
 ////////////////////////
 
@@ -317,14 +317,14 @@ client.on('message', message => {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك...**')
         .setDescription('**برفكس البوت (!)**')
-        .addField('play', 'لتشغيل اغنية')
-        .addField('join', 'دخول رومك الصوتي')
-        .addField('disconnect', 'الخروج من رومك الصوتي')
-        .addField('skip', 'تخطي الأغنية')
-        .addField('pause', 'ايقاف الاغنية مؤقتا')
-        .addField('resume', 'تكملة الاغنية')
-        .addField('queue', 'اظهار قائمة التشغيل')
-        .addField('np', 'اظهار الاغنية اللي انت مشغلها حاليا')
+        .addField('Gaplay', 'لتشغيل اغنية')
+        .addField('Gajoin', 'دخول رومك الصوتي')
+        .addField('Gadisconnect', 'الخروج من رومك الصوتي')
+        .addField('Gaskip', 'تخطي الأغنية')
+        .addField('Gapause', 'ايقاف الاغنية مؤقتا')
+        .addField('Garesume', 'تكملة الاغنية')
+        .addField('Gaqueue', 'اظهار قائمة التشغيل')
+        .addField('Ganp', 'اظهار الاغنية اللي انت مشغلها حاليا')
         .setFooter('(general_commands) لاظهار الاوامر العامة')
       message.channel.send(helpEmbed);
     }
@@ -334,9 +334,9 @@ client.on('message', message => {
     if (message.content === 'general_commands') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر عامة...**')
-        .addField('avatar', "افاتار الشخص المطلوب")
-        .addField('gif', 'البحث عن جيف انت تطلبه')
-        .addField('ping', 'معرفة ping البوت')
+        .addField('Gaavatar', "افاتار الشخص المطلوب")
+        .addField('Gagif', 'البحث عن جيف انت تطلبه')
+        .addField('Gaping', 'معرفة ping البوت')
         .setFooter('المزيد قريبا ان شاء الله!')
       message.channel.send(helpEmbed);
     }
