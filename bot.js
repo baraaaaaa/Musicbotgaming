@@ -314,4 +314,101 @@ function play(guild, song) {
 
 
 
+
+
+
+client.on('message', message => {
+    if (message.content === 'help') {
+        let helpEmbed = new Discord.RichEmbed()
+        .setTitle('**أوامر الميوزك...**')
+        .setDescription('**برفكس البوت (!)**')
+        .addField('play', 'لتشغيل اغنية')
+        .addField('join', 'دخول رومك الصوتي')
+        .addField('disconnect', 'الخروج من رومك الصوتي')
+        .addField('skip', 'تخطي الأغنية')
+        .addField('pause', 'ايقاف الاغنية مؤقتا')
+        .addField('resume', 'تكملة الاغنية')
+        .addField('queue', 'اظهار قائمة التشغيل')
+        .addField('np', 'اظهار الاغنية اللي انت مشغلها حاليا')
+        .setFooter('(general_commands) لاظهار الاوامر العامة')
+      message.channel.send(helpEmbed);
+    }
+});
+
+client.on('message', message => {
+    if (message.content === 'general_commands') {
+        let helpEmbed = new Discord.RichEmbed()
+        .setTitle('**أوامر عامة...**')
+        .addField('avatar', "افاتار الشخص المطلوب")
+        .addField('gif', 'البحث عن جيف انت تطلبه')
+        .addField('ping', 'معرفة ping البوت')
+        .setFooter('المزيد قريبا ان شاء الله!')
+      message.channel.send(helpEmbed);
+    }
+});
+
+client.on('message', message => {
+    var prefix = "1!"
+if (message.content.startsWith(prefix + "uptime")) {
+   let uptime = client.uptime;
+
+   let days = 0;
+   let hours = 0;
+   let minutes = 0;
+   let seconds = 0;
+   let notCompleted = true;
+
+   while (notCompleted) {
+
+       if (uptime >= 8.64e+7) {
+
+           days++;
+           uptime -= 8.64e+7;
+
+       } else if (uptime >= 3.6e+6) {
+
+           hours++;
+           uptime -= 3.6e+6;
+
+       } else if (uptime >= 60000) {
+
+           minutes++;
+           uptime -= 60000;
+
+       } else if (uptime >= 1000) {
+           seconds++;
+           uptime -= 1000;
+
+       }
+
+       if (uptime < 1000)  notCompleted = false;
+
+   }
+
+   message.channel.send("`" + `${days} days, ${hours} hrs, ${minutes} min , ${seconds} sec` + "`");
+
+
+}
+});
+
+client.on('ready', () => {
+  client.user.setGame(` 1!help .`,'https://www.twitch.tv/v5bz');
+  console.log('---------------');
+  console.log('Desert Bot Is Online')
+  console.log('---------------')
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);
