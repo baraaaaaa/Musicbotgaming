@@ -150,7 +150,7 @@ client.on('message', async msg => {
                     ${videos.map(video2 => `${++index}. **${video2.title}**`).join('\n')}`)
                     
 					.setColor("#f7abab")
-					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
+					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)}) //by baraa
 					
 /////////////////					
 					try {
